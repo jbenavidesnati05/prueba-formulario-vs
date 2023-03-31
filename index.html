@@ -13,9 +13,10 @@
         <div class="row">
             <div class="col">
                 <form class="row g-3 needs-validation form-register" novalidate>
+                    <h2>Comencemos!</h2>
                     <div class="col-md-4">
-                      <label for="validationCustom04" class="form-label">Pais</label>
-                      <select class="form-select" id="validationCustom04" required>
+                      <label for="validationCustom01" class="form-label">Pais</label>
+                      <select class="form-select" id="validationCustom01" required>
                         <option value=""></option>
                         <option value="colombia">Colombia</option>
                         <option value="peru">Peru</option>
@@ -28,9 +29,8 @@
                       </div>
                     </div>
                     <div class="col-md-4">
-                      <label for="validationCustom04" class="form-label">Genero</label>
-                      <select class="form-select" id="validationCustom04" required>
-                        <!-- <option selected disabled value="">Pais...</option> -->
+                      <label for="validationCustom02" class="form-label">Genero</label>
+                      <select class="form-select" id="validationCustom02" required>
                         <option value=""></option>
                         <option value="Masculino">Masculino</option>
                         <option value="Femenino">Femenino</option>
@@ -40,8 +40,8 @@
                       </div>
                     </div>
                     <div class="col-md-4">
-                        <label for="validationCustom01" class="form-label">Primer nombre</label>
-                        <input type="text" class="form-control" id="validationCustom01" value="" required>
+                        <label for="validationCustom03" class="form-label">Primer nombre</label>
+                        <input type="text" class="form-control" id="validationCustom03" value="" required>
                         <div class="valid-feedback">
                             Correcto!
                         </div>
@@ -49,9 +49,9 @@
                             Ingrese su primer nombre
                         </div>
                     </div>
-                    <div class="col-md-4">
-                        <label for="validationCustom02" class="form-label">Segundo nombre</label>
-                        <input type="text" class="form-control" id="validationCustom02" value="" required>
+                    <div class="col-md-6">
+                        <label for="validationCustom04" class="form-label">Segundo nombre</label>
+                        <input type="text" class="form-control" id="validationCustom04" value="" required>
                         <div class="valid-feedback">
                             Correcto!
                         </div>
@@ -60,16 +60,19 @@
                         </div>
                     </div>
                     <div class="col-md-6 mb-3">
-                        <label for="validationCustom04" class="form-label">Fecha de nacimiento</label>
-                        <input type="date" class="form-control" aria-label="file example" required>
+                        <label for="validationCustom06" class="form-label">Fecha de nacimiento</label>
+                        <input type="date" max="2005-03-29" class="form-control" id="validationCustom06" aria-label="file example" required>
                         <div class="invalid-feedback">Por favor selecione la fecha de nacimiento</div>
                         <div class="valid-feedback">
                             Correcto!
                         </div>
-                      </div>
-                    <div class="col-md-4">
-                      <label for="validationCustom04" class="form-label">Tipo de Documento</label>
-                      <select class="form-select" id="validationCustom04" required>
+                        <div class="invalid-feedback">
+                            Ingresa la edad y debes ser mayor de 18 años
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                      <label for="validationCustom07" class="form-label">Tipo de Documento</label>
+                      <select class="form-select" id="validationCustom07" required>
                         <option value=""></option>
                         <option value="ciudadania">Cédula de ciudadanía</option>
                         <option value="pasaporte">Pasaporte</option>
@@ -79,21 +82,21 @@
                         Por favor selecione su Tipo de documento
                       </div>
                     </div>
-                    <div class="col-md-4">
-                      <label for="validationCustom05" class="form-label">N° Documento</label>
-                      <input type="text" class="form-control" id="validationCustom05" required>
+                    <div class="col-md-6">
+                      <label for="validationCustom08" class="form-label">N° Documento</label>
+                      <input type="text" class="form-control" id="validationCustom08" required minlength="5">
                       <div class="invalid-feedback">
-                        Por favor ingrese su numero de documento.
+                        Por favor ingrese su numero de documento y mayor de 5 digitos.
                       </div>
                     </div>
-                    <div class="col-md-6 mb-3">
-                        <label for="validationCustom04" class="form-label">Foto documento – Frente</label>
-                        <input type="file" class="form-control" aria-label="file example" accept=".jpg" required>
+                    <div class="col-md-12 mb-3">
+                        <label for="validationCustom09" class="form-label">Foto documento – Frente</label>
+                        <input type="file" class="form-control" id="validationCustom09" aria-label="file example" accept=".jpg" required>
                         <div class="invalid-feedback">Por favor adjunto foto en formato JPG</div>
                       </div>
-                    <div class="col-md-6 mb-3">
-                        <label for="validationCustom04" class="form-label">Foto documento – Reverso</label>
-                        <input type="file" class="form-control" aria-label="file example" accept=".jpg" required>
+                    <div class="col-md-12 mb-3">
+                        <label for="validationCustom10" class="form-label">Foto documento – Reverso</label>
+                        <input type="file" class="form-control" aria-label="file example" id="validationCustom10" accept=".jpg" required>
                         <div class="invalid-feedback">Por favor adjunto foto en formato JPG</div>
                       </div>
                     <div class="col-12">
@@ -101,35 +104,45 @@
                     </div>
                   </form>
             </div>
-            
-
         </div>
     </div>
     <script>
-(() => {
-    'use strict'
-  
-    const forms = document.querySelectorAll('.needs-validation')
-  
-    Array.from(forms).forEach(form => {
-      form.addEventListener('submit', event => {
-        if (!form.checkValidity()) {
-            event.preventDefault()
-            event.stopPropagation()
-            console.log("form invalido");
-        }else{
-            console.log("form valido");
-            window.location.href = `index2.html`;
-
-            event.preventDefault()
-        }
-        form.classList.add('was-validated')
-    }, false)
-
+        (() => {
+            'use strict'
         
-    })
-  })()
+            const forms = document.querySelectorAll('.needs-validation')
+            const array = []
+        
+            Array.from(forms).forEach(form => {
+              form.addEventListener('submit', event => {
+                if (!form.checkValidity()) {
+                    event.preventDefault()
+                    event.stopPropagation()
+                }else{
+                    event.preventDefault()
+                    setTimeout(() => {
+                    console.log("form valido");
+                    window.location.href = `index2.html`;
+                }, 3000);
+                let pais = document.getElementById("validationCustom01").value;
+                let genero = document.getElementById("validationCustom02").value;
+                let nombre1 = document.getElementById("validationCustom03").value;
+                let nombre2 = document.getElementById("validationCustom04").value;
+                let fecha = document.getElementById("validationCustom06").value;
+                let tipo = document.getElementById("validationCustom07").value;
+                let dto = document.getElementById("validationCustom08").value;
+                array.push({pais:pais, genero:genero, primerNombre:nombre1,segundoNombre:nombre2, fecha:fecha, tipoDto:tipo, NDto:dto})
+                console.warn("arreglo de objetos con datos parte 1")
+                console.log(array);
+                }
+                form.classList.add('was-validated')
+            }, false)
+            
+            
+        })
+    })()
 
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 </html>   

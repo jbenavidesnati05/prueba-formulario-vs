@@ -13,41 +13,41 @@
         <div class="row">
             <div class="col">
                 <form class="row g-3 needs-validation form-register" novalidate>
-                  
+                    <h2>Falta muy poco!</h2>
                     <div class="col-md-6">
-                        <label for="validationCustomUsername" class="form-label">Correo electronico</label>
+                        <label for="validationCustom11" class="form-label">Correo electronico</label>
                         <div class="input-group has-validation">
                         <span class="input-group-text" id="inputGroupPrepend">@</span>
-                        <input type="text" class="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
+                        <input type="text" class="form-control" id="validationCustom11" aria-describedby="inputGroupPrepend" required>
                         <div class="invalid-feedback">
                           Por favor ingrese su correo electronico.
                         </div>
                       </div>
                     </div>
                     <div class="col-md-6">
-                      <label for="validationCustom05" class="form-label">Contraseña</label>
-                      <input type="password" class="form-control" id="validationCustom05" required>
+                      <label for="validationCustom12" class="form-label">Contraseña</label>
+                      <input type="password" class="form-control" id="validationCustom12" required>
                       <div class="invalid-feedback">
                         Por favor ingrese su contraseña.
                       </div>
                     </div>
                     <div class="col-md-6">
-                      <label for="validationCustom05" class="form-label"> Confirmacion de Contraseña</label>
-                      <input type="password" class="form-control" id="validationCustom05" required>
+                      <label for="validationCustom13" class="form-label"> Confirmacion de Contraseña</label>
+                      <input type="password" class="form-control" id="validationCustom13" required>
                       <div class="invalid-feedback">
                         Por favor ingrese su contraseña.
                       </div>
                     </div>
                     <div class="col-md-6">
-                      <label for="validationCustom03" class="form-label">Telefono</label>
-                      <input type="number" class="form-control" id="validationCustom03" required>
+                      <label for="validationCustom14" class="form-label">Telefono</label>
+                      <input type="number" class="form-control" id="validationCustom14" required>
                       <div class="invalid-feedback">
                         Por favor ingrese su telefono.
                       </div>
                     </div>
                     <div class="col-md-6">
-                      <label for="validationCustom03" class="form-label">Celular</label>
-                      <input type="number" class="form-control" id="validationCustom03" required>
+                      <label for="validationCustom15" class="form-label">Celular</label>
+                      <input type="number" class="form-control" id="validationCustom15" required>
                       <div class="invalid-feedback">
                         Por favor ingrese su celular.
                       </div>
@@ -64,32 +64,46 @@
     <script>
         (() => {
             'use strict'
-          
             const forms = document.querySelectorAll('.needs-validation')
-          
+            const array2 = []
             Array.from(forms).forEach(form => {
               form.addEventListener('submit', event => {
                 if (!form.checkValidity()) {
                     event.preventDefault()
                     event.stopPropagation()
-                    console.log("form invalido");
                 }else{
-                    console.log("form valido");
-                    window.location.href = `index3.html`;
-        
                     event.preventDefault()
+                    setTimeout(() => {
+                        window.location.href = `index3.html`;
+                    }, 3000);
                 }
+                let correo = document.getElementById("validationCustom11").value;
+                let pass = document.getElementById("validationCustom12").value;
+                let pass2 = document.getElementById("validationCustom13").value;
+                let tel = document.getElementById("validationCustom14").value;
+                let cel = document.getElementById("validationCustom15").value;
+                array2.push({correo:correo, contrasena:pass, confContra:pass2,telefono:tel, celular:cel})
+                console.warn("arreglo de objetos con datos parte 2")
+                console.log(array2);
                 form.classList.add('was-validated')
             }, false)
-        
-                
-            })
-          })()
-
+        })
+    })()
           function regresar(){
-            window.location.href = `index.html`;
+        Swal.fire({
+            position: 'center',
+            title: 'Regresando a parte 1... ',
+            icon:'warning',
+            showConfirmButton: false,
+            timer: 1500
+            })
+            setTimeout(() => {
+                window.location.href = `index.html`;
+                
+            }, 2000);
           }
-          
-            </script>
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 </body>
 </html>   
